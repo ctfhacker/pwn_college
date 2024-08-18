@@ -37,7 +37,10 @@
     in
     {
       devShells.default = pkgs.mkShell {
-        buildInputs = [ python ];
+        buildInputs = [ 
+          python 
+          pkgs.pkgsCross.aarch64-multiplatform.buildPackages.binutils
+        ];
 
         shellHook = ''
           echo "Welcome to the pwn.college dev shell!"
